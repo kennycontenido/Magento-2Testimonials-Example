@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-right" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Buildateam_Testimonials::css/testimonials.css"/>
+    </head>    
+    
+    <body>
+        <referenceBlock name="header.links">  
+            <block class="Buildateam\Testimonials\Block\Link" name="testimonials" />  
+            <move element="testimonials" destination="top.links"/>  
+        </referenceBlock> 
+        <referenceContainer name="page.messages">
+            <block class="Buildateam\Testimonials\Block\Message" name="buildateam.testimonials.message" />
+        </referenceContainer>
+        <referenceContainer name="content">
+           
+            <block class="Buildateam\Testimonials\Block\TestimonialsList" name="posts.list" template="Buildateam_Testimonials::list.phtml" >
+                <block class="Buildateam\Testimonials\Block\TestimonialsForm" name="TestimonialsForm" template="Buildateam_Testimonials::form.phtml">
+                    <container name="form.additional.info" label="Form Additional Info"/>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

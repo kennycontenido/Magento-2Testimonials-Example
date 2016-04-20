@@ -1,0 +1,5 @@
+<li>  
+   <a <?php echo $block->getLinkAttributes() ?>><?php echo $block->escapeHtml($block->getLabel())?>  
+     <?php echo($block->getCounter()) ? '<span class="counter qty">' . $block->escapeHtml($block->getCounter()) . '</span>' : ''; ?>  
+   </a>  
+</li>  

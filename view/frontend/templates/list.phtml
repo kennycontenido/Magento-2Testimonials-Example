@@ -1,0 +1,34 @@
+<?php /** @var $block \Buildateam\Testimonials\Block\TestimonialsList */ ?>
+<h1><?php echo __('Latest Testimonials') ?></h1>
+<?php echo $block->getChildHtml(); ?>
+
+<div id="testimonials_post" class="container-fluid" >
+    <div class="row">
+        <?php
+                $testimonialsCollection = $block->getPosts();
+                if ($testimonialsCollection->getSize() > 0) :
+        ?>
+        <ul class="testimonials-post-list">
+            <?php /** @var $post \Buildateam\Testimonials\Model\Post */ ?>
+            <?php foreach ($testimonialsCollection as $post): ?>
+                <li class="testimonials-post-list-item" >
+                    <div class="testimonials-post-item-content">
+                        <span><strong> <?php echo $post->getCustomerName() ?> </strong> says:<span>
+                     </div>
+                     <div class="testimonials-post-item-content">
+                        <q class="myblockquote">  <?php echo '"' . $post->getContent() . '"' ?></q>
+                     </div>
+                    <div class="testimonials-post-item-meta ">
+                        <span class="pull-right"> <?php echo $post->getCreationTime(); ?></span>
+                    </div>
+                     
+                </li>
+            <?php endforeach; ?>
+        </ul>
+         <?php else : ?>
+        <p><?php echo __('Have no testimonial...be the first to write one!') ?></p>
+        <?php endif; ?>
+    </div>
+</div>
+
+

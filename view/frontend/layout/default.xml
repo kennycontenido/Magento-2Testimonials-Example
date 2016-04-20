@@ -1,0 +1,7 @@
+ <body>      
+  <referenceBlock name="top.links">  
+  <block class="Buildateam\Testimonials\Block\Link" name="testimonials" />  
+  <move element="testimonials" destination="header.links"/>  
+  </referenceBlock>      
+ </body>  
+ 

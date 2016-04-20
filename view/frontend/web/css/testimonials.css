@@ -1,0 +1,38 @@
+#testimonials-form{
+    margin: 15px auto;
+    border: 1px solid #e1e1e8;
+    padding: 15px;
+}
+.form-out{
+    display:none;
+}
+#testimonials_post{
+    margin-top:10px;
+}
+.testimonials-post-list-item {
+    padding: 25px ;
+    margin-bottom: 30px;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
+    list-style-type: none;
+    box-shadow: 5px 5px 5px #888888;
+   }
+.testimonials-post-list{
+    padding-left: 0px !important;
+   
+}
+.testimonials-post-item-content{
+    padding-bottom:15px;
+    
+}
+.pull-right{
+    float:right;
+}
+.myblockquote{
+    margin-left: 0px !important;
+    font-size: 18px;
+}
+.link-to-login{
+    margin-bottom: 10px;
+}

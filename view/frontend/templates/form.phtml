@@ -1,0 +1,48 @@
+<?php if ($block->isUserAllowed()): ?>
+
+<a id="openform" class="link-to-login">Add New Testimonial</a>
+    <div class="form-out" id="accordion_addtestimonials" >
+
+        <form class="form" action="<?php echo $block->getFormAction(); ?>"
+              id="testimonials-form"  method="post"  data-hasrequired="<?php echo __('* Required Fields') ?>"
+              data-mage-init='{"validation":{}}'>
+            <fieldset class="fieldset">
+                <legend class="legend"><span><?php echo __('Let us a Testimonial') ?></span></legend>
+                <br />
+                <div class="field name required">
+                    <label class="label" for="testimonials"><span><?php echo __('Content') ?></span></label>
+                    <div class="control">
+                        <textarea name="testimonials" id="testimonials" title="<?php echo __('Content') ?>"  class="input-textarea" type="text" data-validate="{required:true}"></textarea>
+                    </div>
+                </div>
+                <?php echo $block->getChildHtml('form.additional.info'); ?>
+            </fieldset>
+            <div class="actions-toolbar">
+                <div class="primary pull-right">
+                    <button type="submit" title="<?php echo __('Create Testimonial') ?>" class="action submit primary">
+                        <span><?php echo __('Create Testimonial') ?></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        require([
+            'jquery',
+            'jquery/ui',
+            'tabs'], function ($) {
+             $(window).load(function() {
+        
+            $("#openform").click(function () {
+                $("#accordion_addtestimonials").toggle();
+            });
+             });
+     });
+    </script>     
+<?php else: ?>
+    <div class="link-to-login">
+        <span>   <a href="<?php echo $this->getUrl("customer/account/login") ?>">Sign In</a> in for add a new Testimonial</span>
+    </div>
+ <?php endif;
+  
